@@ -32,12 +32,12 @@ var arrStr = ["Duy", "Minh", "Văn", "Vũ"];
 //     return item + " - WE17304"
 // })
 // console.log(result1);
+// -------------------------------------------------------------
 // const arrNum2 = [12, 2, 32, 5, 8, 13];
 // function selectionSort(arr) {
 //   for (let i = 0; i < arr.length - 1; i++) {
 //     for (let j = i + 1; j < arr.length; j++) {
-//       if (()=>{
-//       }) { // so sánh lớn hơn để sắp xếp giảm dần
+//       if (arr[i] > arr[j]) { // so sánh lớn hơn để sắp xếp giảm dần
 //         let temp = arr[i];
 //         arr[i] = arr[j];
 //         arr[j] = temp;
@@ -51,16 +51,46 @@ var arrStr = ["Duy", "Minh", "Văn", "Vũ"];
 //     return a - b
 // })
 // console.log(arrNum2);
-var arrNum2 = [12, 2, 32, 5, 8, 13];
-var selectionSort = function (arr) {
+// ----------------------------------------------------------
+// const arrNum2 = [12, 2, 32, 5, 8, 13];
+// const selectionSort = (arr) => {
+//     for (let i = 0; i < arr.length - 1; i++) {
+//         for (let j = i + 1; j < arr.length; j++) {
+//             if (arr[i] > arr[j]) { // so sánh nhỏ hơn để sắp xếp tăng dần
+//                 [arr[i], arr[j]] = [arr[j], arr[i]]; // sử dụng destructuring assignment để hoán đổi giá trị
+//             }
+//         }
+//     }
+// }
+// selectionSort(arrNum2); 
+// console.log(arrNum2); 
+// ------------------------
+
+
+function ascendingOrder(a, b) {
+    return a - b;
+}
+var sapxep = function (arr, callback) {
     var _a;
-    for (var i = 0; i < arr.length - 1; i++) {
-        for (var j = i + 1; j < arr.length; j++) {
-            if (arr[i] > arr[j]) { // so sánh nhỏ hơn để sắp xếp tăng dần
-                _a = [arr[j], arr[i]], arr[i] = _a[0], arr[j] = _a[1]; // sử dụng destructuring assignment để hoán đổi giá trị
+    if (!callback) {
+        callback = function (a, b) {
+            if (a > b) {
+                return 1;
+            }
+            else {
+                return -1;
+            }
+        };
+    }
+    var len = arr.length;
+    for (var i = 0; i < len - 1; i++) {
+        for (var j = i + 1; j < len; j++) {
+            if (callback(arr[j], arr[i]) < 0) {
+                _a = [arr[i], arr[j]], arr[j] = _a[0], arr[i] = _a[1];
             }
         }
     }
+    return arr;
 };
-selectionSort(arrNum2); // sắp xếp mảng arrNum2 theo thứ tự tăng dần
-console.log(arrNum2); // [2, 5, 8, 12, 13, 32]
+sapxep(arrNum);
+console.log(arrNum);

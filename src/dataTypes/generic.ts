@@ -1,9 +1,9 @@
 // Generic gen ne ric
-function showStringData(a:string): string {
+function showStringData(a: string): string {
     return a
 }
 
-function showNumberData(a: number):number{
+function showNumberData(a: number): number {
     return a
 }
 
@@ -11,10 +11,10 @@ function showData<T>(a: T): T {
     return a
 }
 
-showData<string> ("string")
+showData<string>("string")
 
 // 
-const arrNum = [1,2,3,5,8,13] //Fibonacci
+const arrNum = [1, 2, 3, 5, 8, 13] //Fibonacci
 const arrStr = ["Duy", "Minh", "Văn", "Vũ"]
 
 // function WE17304_map(arr: number[], callback: (item: number) => number):number[] {
@@ -41,16 +41,14 @@ const arrStr = ["Duy", "Minh", "Văn", "Vũ"]
 // })
 
 // console.log(result1);
-
+// -------------------------------------------------------------
 
 // const arrNum2 = [12, 2, 32, 5, 8, 13];
 
 // function selectionSort(arr) {
 //   for (let i = 0; i < arr.length - 1; i++) {
 //     for (let j = i + 1; j < arr.length; j++) {
-//       if (()=>{
-
-//       }) { // so sánh lớn hơn để sắp xếp giảm dần
+//       if (arr[i] > arr[j]) { // so sánh lớn hơn để sắp xếp giảm dần
 //         let temp = arr[i];
 //         arr[i] = arr[j];
 //         arr[j] = temp;
@@ -67,31 +65,30 @@ const arrStr = ["Duy", "Minh", "Văn", "Vũ"]
 //     return a - b
 // })
 // console.log(arrNum2);
+// ----------------------------------------------------------
+
+// const arrNum2 = [12, 2, 32, 5, 8, 13];
 
 
-const arrNum2 = [12, 2, 32, 5, 8, 13];
+// const selectionSort = (arr) => {
+
+//     for (let i = 0; i < arr.length - 1; i++) {
+
+//         for (let j = i + 1; j < arr.length; j++) {
+
+//             if (arr[i] > arr[j]) { // so sánh nhỏ hơn để sắp xếp tăng dần
+
+//                 [arr[i], arr[j]] = [arr[j], arr[i]]; // sử dụng destructuring assignment để hoán đổi giá trị
+
+//             }
+
+//         }
+
+//     }
+
+// }
+// selectionSort(arrNum2); 
+// console.log(arrNum2); 
 
 
-const selectionSort = (arr) => {
-
-for (let i = 0; i < arr.length - 1; i++) {
-
-for (let j = i + 1; j < arr.length; j++) {
-
-if (arr[i] > arr[j]) { // so sánh nhỏ hơn để sắp xếp tăng dần
-
-[arr[i], arr[j]] = [arr[j], arr[i]]; // sử dụng destructuring assignment để hoán đổi giá trị
-
-}
-
-}
-
-}
-
-}
-
-
-selectionSort(arrNum2); // sắp xếp mảng arrNum2 theo thứ tự tăng dần
-
-
-console.log(arrNum2); // [2, 5, 8, 12, 13, 32]
+// ------------------------
